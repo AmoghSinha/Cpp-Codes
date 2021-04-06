@@ -4,23 +4,23 @@ using namespace std;
 
 typedef long long int ll;
 
-void showQueue(queue<ll> q)
-{
-	while (!q.empty())
-	{
-		cout << q.front() << " ";
-		q.pop();
-	}
-}
-
 int main()
 {
-	queue<ll> q;
+	priority_queue<ll, vector<ll>, greater<ll>> minH;
 
-	q.push(10);
-	q.push(30);
+	for (int i = 0; i < 5; ++i)
+	{
+		ll temp;
+		cin >> temp;
+		minH.push(temp);
 
-	showQueue(q);
+		if (minH.size() > 2)
+		{
+			minH.pop();
+		}
+	}
+
+	cout << minH.top();
 
 	return 0;
 }

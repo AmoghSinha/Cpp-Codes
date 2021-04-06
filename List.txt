@@ -1,0 +1,20 @@
+Merge Sort
+Quick Sort
+Binary Search
+GCD
+LCM
+Stack
+Queue
+Linked List
+Floyd's Cycle
+Heap
+Sieve of Eratosthenes
+Modular Exponentiation
+Bitset
+Newton Raphson
+Check if isPrime
+Prime factorization
+Tail Recursion
+Modular Inverse
+Matrix Exponentiation
+

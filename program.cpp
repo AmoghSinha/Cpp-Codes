@@ -154,10 +154,10 @@ ll power(ll x, ll y)
 	while (y > 0)
 	{
 		if (y & 1)
-			res = res * x;
+			res = (res * x) % MOD;
 
 		y = y >> 1;
-		x = x * x;
+		x = (x * x) % MOD;
 	}
 	return res;
 }
@@ -213,12 +213,16 @@ int main()
 	cin.tie(NULL);
 	cout.tie(NULL);
 
-	// cin >> t;
-	t = 1;
+	cin >> t;
+	// t = 1;
 
 	while (t--)
 	{
-		cout << "HELLO";
+		ll p, q, r;
+
+		cin >> p >> q >> r;
+
+		cout << lcm(p, power(q, r)) << endl;
 		cout << endl;
 	}
 	return 0;
