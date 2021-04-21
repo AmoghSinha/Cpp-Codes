@@ -12,71 +12,41 @@ int main()
 	string str;
 	cin >> str;
 
-	ll count = 0, ans = 0, maximum = 0, temp = 0;
+	ll ans = 1, maximum = 0;
 	bool flag = false;
 
-	stack<ll> s;
+	stack<int> s;
+	s.push(-1);
 
-	for (auto i : str)
+	for (int i = 0; i < str.size(); i++)
 	{
-		if (s.empty() || i == '(')
+		if (str[i] == '(')
 		{
-			if (i == '(')
+			s.push(i);
+		}
+		else
+		{
+			s.pop();
+			if (s.size())
+			{
+				if (i - s.top() > maximum)
+				{
+					maximum = i - s.top();
+					ans = 1;
+				}
+				else if (i - s.top() == maximum)
+				{
+					ans++;
+				}
+			}
+			else
 			{
 				s.push(i);
-
-				if (flag)
-				{
-					flag = false;
-					if (count == maximum)
-					{
-						ans++;
-					}
-					else if (count > maximum)
-					{
-						ans = 1;
-					}
-					maximum = max(maximum, count);
-				}
 			}
 		}
-		else if (i == ')')
-		{
-			if (s.top() == '(')
-			{
-				if (flag)
-				{
-					count += 2;
-				}
-				else
-				{
-					flag = true;
-					count = 2;
-				}
-				s.pop();
-			}
-		}
-	}
-
-	if (flag)
-	{
-		flag = false;
-		if (count == maximum)
-		{
-			ans++;
-		}
-		else if (count > maximum)
-		{
-			ans = 1;
-		}
-		maximum = max(maximum, count);
-	}
-
-	if (!ans)
-	{
-		ans = 1;
 	}
 
 	cout << maximum << " " << ans;
+
 	return 0;
 }
