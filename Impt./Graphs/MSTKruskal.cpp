@@ -50,7 +50,7 @@ ll kruskalMST(ll V, vector<vector<ll>> &edges)
 // Algo for finding Minimum Spanning Tree
 int main()
 {
-	ll n = 5;				  // n = nodes
+	ll n = 5;				  // n = edges
 	vector<vector<ll>> edges; // Node1; Node2; Weight
 
 	// edges.push_back({0, 1, 1});

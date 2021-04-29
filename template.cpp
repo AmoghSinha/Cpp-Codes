@@ -8,6 +8,7 @@ typedef long long int ll;
 #define MOD 1000000007
 #define pb push_back
 #define PI 3.1415926535897932384626433832795028841971693993751
+#define endl "\n"
 
 ll gcd(ll a, ll b)
 {
