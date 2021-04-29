@@ -7,7 +7,7 @@ typedef long long int ll;
 template <typename T>
 class Graph
 {
-	map<T, list<pair<T, ll>>> adj;
+	map<T, list<pair<T, ll>>> adj; //  map<Node, list<Node, weight>>>
 
 public:
 	void addEdge(T a, T b, ll weight)
