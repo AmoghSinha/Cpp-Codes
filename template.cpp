@@ -190,22 +190,6 @@ bool customCompare(const pair<int, int> &a,
 	return (a.first < b.first);
 }
 
-bool check(ll mid, ll a[], ll n, ll d)
-{
-	if (n == 1)
-		return false;
-
-	for (int i = 0; i < (n - mid); ++i)
-	{
-		if (abs(a[i] - a[i + mid - 1]) < d)
-		{
-			return false;
-		}
-	}
-
-	return true;
-}
-
 int main()
 {
 	ll t, n, m, i, j, k, l, ans, temp, index, prev, sum, flag, minimum, maximum;
